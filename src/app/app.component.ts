@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   title = 'tibia-knowledge';
 
   constructor(private primengConfig: PrimeNGConfig) { }
-
+  
   ngOnInit() {
     this.primengConfig.ripple = true;
   }
