@@ -1,0 +1,9 @@
+{
+    "extends": ["tslint-angular"],
+    "rules": {
+      "directive-selector": [true, "attribute", "foo", "camelCase"],
+      "component-selector": [true, "element", "app", "kebab-case"],
+      "component-class-suffix": [true, "Component"],
+      "directive-class-suffix": [true, "Directive"]
+    }
+}
