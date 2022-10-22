@@ -9,7 +9,8 @@
     "lint": "tslint -q ./src/app/*.ts",
     "lint:fix": "tslint --fix ./src/app/*.ts",
     "lint:core": "tslint -q ./projects/power-core-angular/src/app/*.ts ",
-    "test": "ng test"
+    "test": "ng test",
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
