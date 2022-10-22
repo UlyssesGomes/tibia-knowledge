@@ -12,14 +12,6 @@
     "test": "ng test",
     "prepare": "husky install"
   },
-  "husky": {
-    "hooks": {
-      "applypatch-msg": "echo \"[Husky] applypatch-msg\"",
-      "pre-applypatch": "echo \"[Husky] pre-applypatch\"",
-      "post-applypatch": "echo \"[Husky] post-applypatch\"",
-      "pre-commit": "npm run lint"
-    }
-  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~13.2.0",
