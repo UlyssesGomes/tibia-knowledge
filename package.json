@@ -9,7 +9,8 @@
     "lint": "tslint -q ./src/app/*.ts",
     "lint:fix": "tslint --fix ./src/app/*.ts",
     "lint:core": "tslint -q ./projects/power-core-angular/src/app/*.ts ",
-    "test": "ng test",
+    "test:dev": "ng test  --karma-config karma-dev.conf.js --project=tibia-knowledge",
+    "test:husky": "ng test  --karma-config karma.conf.js --code-coverage --project=tibia-knowledge",
     "prepare": "husky install"
   },
   "private": true,
