@@ -1,0 +1,38 @@
+<ul>
+    <li *ngFor="let menu of menuItems">
+        <ng-template *ngIf="menu.type === 'group'; then showGroup else showSection"></ng-template>
+        <ng-template #showGroup>
+            <div class="menu-group item-height">
+                <div class="text-overflow">
+                    <i [class]="menu.icon" class="icon-size"></i>
+                    <span class="group-left-margin">
+                        {{menu.name}}
+                    </span>
+                </div>
+                <div *ngIf="menu.children.length > 0" (click)="expandMenuGroup(menu)">
+                    <i class="pi pi-chevron-up menu-group-expand" [ngClass]="{'menu-group-colapsed-button': !menu.open}"></i>               
+                </div>
+            </div>
+            <div *ngIf="menu.children.length > 0" [ngClass]="{'hide-children': !menu.open, 'show-children': menu.open}">
+                <ul>
+                    <li class="sub-menu item-height" *ngFor="let item of menu.children">
+                        <span class="item-left-margin">
+                            {{item.name}}
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </ng-template>
+        <ng-template #showSection>
+            <!-- <div class="menu-group item-height">
+                <div>
+                    <i [class]="menu.icon" class="icon-size"></i>
+                    <span class="item-left-margin">
+                        {{menu.name}}
+                    </span>
+                </div>
+            </div> -->
+            <span>ò.Ó</span>
+        </ng-template>
+    </li>
+</ul>

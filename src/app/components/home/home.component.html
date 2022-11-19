@@ -1,4 +1,8 @@
-<div>
-    <p-button label="Home Button" ></p-button>
-    <router-outlet></router-outlet>
+<div class="grid grid-nogutter">
+    <div class="col-fixed" style="width: 300px; background-color: rebeccapurple;">
+        <app-sidebar [menuItems]="menuList"></app-sidebar>
+    </div>
+    <div class="col" style="background-color: aquamarine;">
+        <router-outlet></router-outlet>
+    </div>
 </div>
