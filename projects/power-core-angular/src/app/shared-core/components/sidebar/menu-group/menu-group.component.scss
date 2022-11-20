@@ -9,13 +9,13 @@ ul {
 }
 
 .menu-group {
-    display: flex;
+    @extend .flex-align-items-vertically;
     justify-content: space-between;
-    align-items: center;
     padding: 0 10px;
     margin: 2px 10px;
     border-radius: $border-radius;
     transition: 1s;
+    font-size: 16px;
     cursor: pointer;
 
     &:hover {
@@ -28,8 +28,7 @@ ul {
 }
 
 .sub-menu {
-    display: flex;
-    align-items: center;
+    @extend .flex-align-items-vertically;
     padding: 0 25px;
     margin: 2px 10px;
     border-radius: $border-radius;
@@ -41,7 +40,7 @@ ul {
     }
 }
 
-.group-left-margin {
+.left-margin {
     margin-left: 10px
 }
 
@@ -70,12 +69,23 @@ ul {
     overflow: hidden;
     max-height: 700px;
     transition: max-height 0.5s;
-    transition-timing-function: ease-in;
+    transition-timing-function: ease;
 }
 
 .hide-children {
     overflow: hidden;
     max-height: 0;
     transition: max-height 0.5s;
-    transition-timing-function: ease-out;
+    transition-timing-function: ease;
+}
+
+.section-model {
+    @extend .flex-align-items-vertically;
+    margin-left: 16px;
+    height: 30px;
+}
+
+.flex-align-items-vertically {
+    display: flex;
+    align-items: center;
 }

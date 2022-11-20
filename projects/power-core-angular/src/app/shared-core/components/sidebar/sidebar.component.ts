@@ -10,7 +10,7 @@ import { MenuGroupModel, MenuModel } from './model/menu-model';
 export class SidebarComponent implements OnInit {
 
   @Input()
-  menuItems: MenuGroupModel[] = [];
+  menuItems: MenuModel[] = [];
 
   constructor() { }
 

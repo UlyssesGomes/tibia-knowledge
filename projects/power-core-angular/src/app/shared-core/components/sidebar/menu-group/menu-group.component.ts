@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MenuGroupModel } from '../model/menu-model';
+import { MenuGroupModel, MenuModel } from '../model/menu-model';
 
 @Component({
   selector: 'app-menu-group',
@@ -9,7 +9,7 @@ import { MenuGroupModel } from '../model/menu-model';
 export class MenuGroupComponent {
 
   @Input()
-  menuItems: MenuGroupModel[] = [];
+  menuItems: MenuModel[] = [];
 
   constructor() { }
 

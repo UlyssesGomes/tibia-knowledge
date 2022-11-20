@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MenuGroupModel, MenuItemModel } from 'projects/power-core-angular/src/app/shared-core/components/sidebar/model/menu-model';
+import { MenuGroupModel, MenuItemModel, MenuModel, MenuSectionModel } from 'projects/power-core-angular/src/app/shared-core/components/sidebar/model/menu-model';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +9,7 @@ import { MenuGroupModel, MenuItemModel } from 'projects/power-core-angular/src/a
 })
 export class HomeComponent implements OnInit {
 
-  menuList: MenuGroupModel[] = [
+  menuList3: MenuGroupModel[] = [
     new MenuGroupModel(
       'Menu 1 com um texto demasiadamente grande para saber se entra uma elipses.',
       '/menu1',
@@ -38,7 +38,52 @@ export class HomeComponent implements OnInit {
       'pi pi-shield',
       []
     ),
-  ]
+  ];
+
+  menuList: MenuModel[] = [
+    new MenuSectionModel('Section 1'),
+    new MenuGroupModel(
+      'Menu 1 com um texto demasiadamente grande para saber se entra uma elipses.',
+      '/menu1',
+      'pi pi-code',
+      []
+    ),
+    new MenuGroupModel(
+      'Menu 2',
+      '/menu2',
+      'pi pi-bolt',
+      [
+        new MenuItemModel('Submenu1', 'subroute1'),
+        new MenuItemModel('Submenu2', 'subroute2'),
+        new MenuItemModel('Submenu3', 'subroute3')
+      ]
+    ),
+    new MenuGroupModel(
+      'Menu 3',
+      '/menu3',
+      'pi pi-map',
+      []
+    ),
+    new MenuGroupModel(
+      'Menu 4',
+      '/menu4',
+      'pi pi-shield',
+      []
+    ),
+    new MenuSectionModel('Section 2'),
+    new MenuGroupModel(
+      'Menu 5',
+      '/menu5',
+      'pi pi-calendar',
+      []
+    ),
+    new MenuGroupModel(
+      'Menu 6',
+      '/menu6',
+      'pi pi-cog',
+      []
+    ),
+  ];
 
   constructor() { }
 
