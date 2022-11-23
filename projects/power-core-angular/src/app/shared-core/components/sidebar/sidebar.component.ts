@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { MenuGroupModel, MenuModel } from './model/menu-model';
 
@@ -7,14 +7,18 @@ import { MenuGroupModel, MenuModel } from './model/menu-model';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss']
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent {
 
   @Input()
   menuItems: MenuModel[] = [];
+  @Input()
+  title: string;
+  @Input()
+  logo: string;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
+    this.title = '';
+    this.logo = '';
   }
 
 }

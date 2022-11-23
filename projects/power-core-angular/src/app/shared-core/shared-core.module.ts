@@ -5,6 +5,7 @@ import { FormControlMessageComponent } from './components/form-control-message/f
 import { InputmessagesPipe } from './pipes/inputmessages.pipe';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MenuGroupComponent } from './components/sidebar/menu-group/menu-group.component';
+import { SidebarHeaderComponent } from './components/sidebar/sidebar-header/sidebar-header.component';
 
 
 
@@ -13,7 +14,8 @@ import { MenuGroupComponent } from './components/sidebar/menu-group/menu-group.c
     FormControlMessageComponent,
     InputmessagesPipe,
     SidebarComponent,
-    MenuGroupComponent
+    MenuGroupComponent,
+    SidebarHeaderComponent
   ],
   imports: [
     CommonModule
