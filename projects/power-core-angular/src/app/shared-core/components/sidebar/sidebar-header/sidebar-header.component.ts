@@ -12,15 +12,19 @@ export class SidebarHeaderComponent {
   @Input()
   alt: string;
   @Input()
-  title: string;
+  appName: string;
   @Input()
   backgroundColor: string;
 
   constructor() {
-    this.title = '';
+    this.appName = '';
     this.logo = '';
     this.alt = '';
     this.backgroundColor = 'header-custom';
+  }
+
+  sidebarExpandColapse() {
+
   }
 
 }

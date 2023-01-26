@@ -12,12 +12,12 @@ export class SidebarComponent {
   @Input()
   menuItems: MenuModel[] = [];
   @Input()
-  title: string;
+  appName: string;
   @Input()
   logo: string;
 
   constructor() {
-    this.title = '';
+    this.appName = '';
     this.logo = '';
   }
 

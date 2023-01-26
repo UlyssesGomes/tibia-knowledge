@@ -1,6 +1,12 @@
 .text-overflow {
     overflow: hidden;
-    margin-inline-end: auto;
+    // margin-inline-end: auto;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.clean-button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }

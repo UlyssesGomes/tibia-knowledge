@@ -1,8 +1,10 @@
-<div class="header-defaults elevation" [class]="backgroundColor">
+<div class="header-defaults elevation pr-1" [class]="backgroundColor">
     <div>
-        <img class="logo-size" [src]="logo" [alt]="alt"/>
+        <button class="clean-button" (click)="sidebarExpandColapse()">
+            <img class="logo-size" [src]="logo" [alt]="alt"/>
+        </button>
     </div>
-    <div>
-        <h3 class="title-overflow">{{title}}</h3>
+    <div class="title-overflow">
+        <h3>{{appName}}</h3>
     </div>
 </div>

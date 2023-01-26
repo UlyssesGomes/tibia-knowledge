@@ -16,8 +16,10 @@
 }
 
 .title-overflow {
-    @extend .text-overflow;
-    white-space: nowrap;
+    min-width: 0;
+    h3 {
+        @extend .text-overflow;
+    }
 }
 
 .elevation {
