@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { MenuGroupModel, MenuModel } from './model/menu-model';
+import { MenuGroupModel, MenuModel, SidebarColorScheme } from './model/menu-model';
 
 @Component({
   selector: 'app-sidebar',
@@ -15,6 +15,8 @@ export class SidebarComponent {
   appName: string;
   @Input()
   logo: string;
+  @Input()
+  colorScheme!: SidebarColorScheme;  
 
   constructor() {
     this.appName = '';

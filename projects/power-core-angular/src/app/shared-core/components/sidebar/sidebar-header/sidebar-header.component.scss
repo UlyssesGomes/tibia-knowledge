@@ -1,12 +1,11 @@
 @use "../../../../../assets/styles/utilities";
 
 .header-custom {
-    background-color: gray;
+    background-color: rgb(141, 145, 142);
 }
 
 .header-defaults {
     height: 75px;
-    margin-bottom: 10px;
     display: flex;
     align-items: center;
 

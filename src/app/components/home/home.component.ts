@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MenuGroupModel, MenuItemModel, MenuModel, MenuSectionModel } from 'projects/power-core-angular/src/app/shared-core/components/sidebar/model/menu-model';
+import { SidebarColorScheme, MenuGroupModel, MenuItemModel, MenuModel, MenuSectionModel } from 'projects/power-core-angular/src/app/shared-core/components/sidebar/model/menu-model';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +9,7 @@ import { MenuGroupModel, MenuItemModel, MenuModel, MenuSectionModel } from 'proj
 })
 export class HomeComponent implements OnInit {
 
-  menuList3: MenuGroupModel[] = [
+  menuList2: MenuGroupModel[] = [
     new MenuGroupModel(
       'Menu 1 com um texto demasiadamente grande para saber se entra uma elipses.',
       '/menu1',
@@ -85,7 +85,11 @@ export class HomeComponent implements OnInit {
     ),
   ];
 
-  constructor() { }
+  sidebarColor!: SidebarColorScheme;
+
+  constructor() {
+    this.sidebarColor = new SidebarColorScheme('#942223', '#FFF', '#FFF', '#3F3');
+  }
 
   ngOnInit(): void {
   }

@@ -38,6 +38,20 @@ export class MenuItemModel extends MenuModel {
 
 export class MenuSectionModel extends MenuModel {
     constructor(name: string) {
-        super(name, '')
+        super(name, 'section')
+    }
+}
+
+export class SidebarColorScheme {
+    headerBackgroundColor: string;
+    headerColor: string;
+    contentBackgroundColor: string;
+    contentColor: string;
+
+    constructor(headerBackgroundColor, headerColor, contentBackgroundColor, contentColor) {
+        this.headerBackgroundColor = headerBackgroundColor;
+        this.headerColor = headerColor;
+        this.contentBackgroundColor = contentBackgroundColor;
+        this.contentColor = contentColor;
     }
 }

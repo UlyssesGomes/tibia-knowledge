@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MenuGroupModel, MenuModel } from '../model/menu-model';
+import { MenuModel, SidebarColorScheme } from '../model/menu-model';
 
 @Component({
   selector: 'app-menu-group',
@@ -10,6 +10,8 @@ export class MenuGroupComponent {
 
   @Input()
   menuItems: MenuModel[] = [];
+  @Input()
+  colorScheme!: SidebarColorScheme;
 
   constructor() { }
 

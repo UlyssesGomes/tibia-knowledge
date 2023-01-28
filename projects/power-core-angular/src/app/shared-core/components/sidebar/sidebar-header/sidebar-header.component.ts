@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { SidebarColorScheme } from '../model/menu-model';
 
 @Component({
   selector: 'app-sidebar-header',
@@ -15,6 +16,8 @@ export class SidebarHeaderComponent {
   appName: string;
   @Input()
   backgroundColor: string;
+  @Input()
+  colorScheme!: SidebarColorScheme;
 
   constructor() {
     this.appName = '';
