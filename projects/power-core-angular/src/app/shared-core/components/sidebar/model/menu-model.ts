@@ -15,13 +15,13 @@ export class MenuGroupModel extends MenuModel {
     route: string;
     selected: boolean;
 
-    constructor(name: string, route: string, icon: string, children: MenuItemModel[]) {
+    constructor(name: string, route: string, icon: string, children: MenuItemModel[], selected = false) {
         super(name, 'group');
         this.children = children;
         this.route = route;
         this.open = false;
         this.icon = icon;
-        this.selected = false;
+        this.selected = selected;
     }
 }
 
@@ -29,10 +29,10 @@ export class MenuItemModel extends MenuModel {
     route: string;
     selected: boolean;
 
-    constructor(name: string, route: string) {
+    constructor(name: string, route: string, selected = false) {
         super(name, 'item');
         this.route = route;
-        this.selected = false;
+        this.selected = selected;
     }
 }
 

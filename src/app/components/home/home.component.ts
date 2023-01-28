@@ -14,7 +14,8 @@ export class HomeComponent implements OnInit {
       'Menu 1 com um texto demasiadamente grande para saber se entra uma elipses.',
       '/menu1',
       'pi pi-code',
-      []
+      [],
+      true
     ),
     new MenuGroupModel(
       'Menu 2',
@@ -46,7 +47,8 @@ export class HomeComponent implements OnInit {
       'Menu 1 com um texto demasiadamente grande para saber se entra uma elipses.',
       '/menu1',
       'pi pi-code',
-      []
+      [],
+      true
     ),
     new MenuGroupModel(
       'Menu 2',
@@ -88,7 +90,8 @@ export class HomeComponent implements OnInit {
   sidebarColor!: SidebarColorScheme;
 
   constructor() {
-    this.sidebarColor = new SidebarColorScheme('#942223', '#FFF', '#FFF', '#3F3');
+    // TODO - mudar cor do hover nos items, mudar cor no shadowbox do header.
+    this.sidebarColor = new SidebarColorScheme('#942223', '#FFF', '#325899', '#3F3');
   }
 
   ngOnInit(): void {

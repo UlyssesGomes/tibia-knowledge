@@ -3,7 +3,7 @@
         <li *ngFor="let menu of menuItems">
             <ng-template *ngIf="menu.type === 'group'; then showGroup else showSection"></ng-template>
             <ng-template #showGroup>
-                <div class="menu-group item-height" (click)="expandMenuGroup(menu)">
+                <div class="menu-group item-height" (click)="expandMenuGroup(menu)" [ngClass]="{'selected-item': $any(menu).selected}">
                     <div class="flex-align-items-vertically">
                         <i [class]="$any(menu).icon" class="icon-size"></i>
                         <span class="left-margin text-overflow" [title]="menu.name">
