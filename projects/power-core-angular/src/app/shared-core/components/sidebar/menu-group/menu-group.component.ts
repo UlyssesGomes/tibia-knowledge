@@ -16,8 +16,6 @@ export class MenuGroupComponent {
   constructor() { }
 
   expandMenuGroup(menu) {
-    console.log('expandMenuGroup', menu);
-    
     menu.open = !menu.open;
   }
 }

@@ -26,8 +26,6 @@ export class LoginComponent implements OnInit {
   login() {
     const form: FormGroup = this.loginForm;
     if(form.valid) {
-      console.log(form.value);        
-      console.log('logando...');
       this.router.navigate(['/home']);
     }
   }
