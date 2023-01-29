@@ -1,0 +1,7 @@
+<div *ngIf="formGroup !== undefined && controlName !== undefined" class="my-4" [formGroup]="formGroup">
+    <span class="p-float-label">
+        <input class="w-full p-inputtext-sm" id="customInput" [type]="type" pInputText [formControlName]="controlName">
+        <label for="customInput">{{label}}</label>
+    </span>
+    <app-form-control-message [control]="formGroup.get(controlName)"></app-form-control-message>
+</div>

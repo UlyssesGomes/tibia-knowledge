@@ -1,0 +1,13 @@
+<div class="w-full h-full grid justify-content-center align-items-center">
+    <p-card class="mx-1 col-12 md:col-6 lg:col-4 xl:col-2">
+        <div class="flex justify-content-center">
+            <img class="spellbook-image" src="assets/image/spellbook.png" alt="A magic book.">
+        </div>
+        <h3 class="login-title">Tibia Knowledge</h3>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <app-input-control [formGroup]="loginForm" controlName="user" label="User"></app-input-control>
+            <app-input-control [formGroup]="loginForm" controlName="password" label="Password" type="password"></app-input-control>
+            <app-send-button [disabled]="loginForm.invalid" label="Login"></app-send-button>
+        </form>
+    </p-card>
+</div>

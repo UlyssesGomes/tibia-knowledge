@@ -30,7 +30,12 @@ module.exports = function (config) {
       reporters: [
         { type: 'html' },
         { type: 'text-summary' }
-      ],
+      ]
+    },
+    reporters: ['progress', 'kjhtml', 'coverage'],
+    coverageReporter: {
+      type : 'html',
+      dir : 'coverage/',
       check: {
         global: {
           statements: 80,
@@ -40,17 +45,12 @@ module.exports = function (config) {
         },
       },
     },
-    reporters: ['progress', 'kjhtml', 'coverage'],
-    coverageReporter: {
-      type : 'html',
-      dir : 'coverage/'
-    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['ChromeHeadless'],
-    singleRun: true,
+    browsers: ['Chrome'],
+    singleRun: false,
     restartOnFileChange: true
   });
 };

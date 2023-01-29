@@ -1,5 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+// Primeng theme
+@use "../node_modules/primeng/resources/themes/lara-dark-blue/theme.css";
+// Power core angular utilities
+@use "/projects/power-core-angular/src/styles.scss";
 
 body {
     margin: 0;
+    color: #ffffffd9;
+}
+
+.grid {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
 }

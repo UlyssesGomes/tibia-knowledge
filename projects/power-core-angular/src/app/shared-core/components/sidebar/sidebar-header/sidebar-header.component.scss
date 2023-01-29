@@ -1,0 +1,31 @@
+@use "../../../../../assets/styles/utilities";
+
+.header-custom {
+    background-color: rgb(141, 145, 142);
+}
+
+.header-defaults {
+    height: 75px;
+    display: flex;
+    align-items: center;
+
+    div {
+        margin-left: 10px;
+    }
+}
+
+.title-overflow {
+    min-width: 0;
+    h3 {
+        @extend .text-overflow;
+    }
+}
+
+.elevation {
+    box-shadow: 0px 4px 14px -4px rgba(0,0,0,0.52);
+}
+
+.logo-size {
+    width: 60px;
+    height: 60px;
+}
