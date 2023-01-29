@@ -1,0 +1,34 @@
+<div [ngStyle]="{'color': colorScheme?.contentColor}" class="py-2">
+    <ul>
+        <li *ngFor="let menu of menuItems">
+            <ng-template *ngIf="menu.type === 'group'; then showGroup else showSection"></ng-template>
+            <ng-template #showGroup>
+                <div class="menu-group item-height" (click)="expandMenuGroup(menu)" [ngClass]="{'selected-item': $any(menu).selected}">
+                    <div class="flex-align-items-vertically">
+                        <i [class]="$any(menu).icon" class="icon-size"></i>
+                        <span class="left-margin text-overflow" [title]="menu.name">
+                            {{menu.name}}
+                        </span>
+                    </div>
+                    <div *ngIf="$any(menu).children.length > 0">
+                        <i class="pi pi-chevron-up menu-group-expand" [ngClass]="{'menu-group-colapsed-button': !$any(menu).open}"></i>               
+                    </div>
+                </div>
+                <div *ngIf="$any(menu).children.length > 0" [ngClass]="{'hide-children': !$any(menu).open, 'show-children': $any(menu).open}">
+                    <ul>
+                        <li class="sub-menu item-height" *ngFor="let item of $any(menu).children as MenuGroupItem">
+                            <span class="item-left-margin">
+                                {{item.name}}
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </ng-template>
+            <ng-template #showSection>
+                <div class="section-model">
+                    <span>{{menu.name}}</span>
+                </div>
+            </ng-template>
+        </li>
+    </ul>
+</div>

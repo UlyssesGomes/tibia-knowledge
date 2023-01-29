@@ -9,15 +9,9 @@
     "lint": "tslint -q ./src/app/*.ts",
     "lint:fix": "tslint --fix ./src/app/*.ts",
     "lint:core": "tslint -q ./projects/power-core-angular/src/app/*.ts ",
-    "test": "ng test"
-  },
-  "husky": {
-    "hooks": {
-      "applypatch-msg": "echo \"[Husky] applypatch-msg\"",
-      "pre-applypatch": "echo \"[Husky] pre-applypatch\"",
-      "post-applypatch": "echo \"[Husky] post-applypatch\"",
-      "pre-commit": "npm run lint"
-    }
+    "test:dev": "ng test  --karma-config karma-dev.conf.js --project=tibia-knowledge",
+    "test:husky": "ng test  --karma-config karma.conf.js --code-coverage --project=tibia-knowledge",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
@@ -29,6 +23,7 @@
     "@angular/platform-browser": "~13.2.0",
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
+    "primeflex": "^3.3.0",
     "primeicons": "^5.0.0",
     "primeng": "^13.4.1",
     "rxjs": "~7.5.0",

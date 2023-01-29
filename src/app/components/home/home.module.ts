@@ -5,6 +5,7 @@ import { ButtonModule } from 'primeng/button'
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
+import { SharedCoreModule } from 'projects/power-core-angular/src/app/shared-core/shared-core.module';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { HomeComponent } from './home.component';
     CommonModule,
     HomeRoutingModule,
     ButtonModule,
+    SharedCoreModule
   ],
   exports: [
     HomeComponent

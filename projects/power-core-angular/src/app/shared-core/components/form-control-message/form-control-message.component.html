@@ -1,0 +1,5 @@
+<small *ngIf="control.invalid && control.dirty" [class]="customClass">
+    <span *ngFor="let error of control.errors | keyvalue">
+        <span>*{{ error | inputmessages }}</span>
+    </span>    
+</small>

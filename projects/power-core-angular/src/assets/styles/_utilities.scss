@@ -1,0 +1,11 @@
+.text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.clean-button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
