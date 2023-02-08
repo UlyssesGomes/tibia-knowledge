@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { SidebarColorScheme, MenuGroupModel, MenuItemModel, MenuModel, MenuSectionModel } from 'projects/power-core-angular/src/app/shared-core/components/sidebar/model/menu-model';
+import { SidebarColorScheme, MenuGroupModel, MenuItemModel, MenuModel, MenuSectionModel, SelectedColor } from 'projects/power-core-angular/src/app/shared-core/components/sidebar/model/menu-model';
 
 @Component({
   selector: 'app-home',
@@ -90,8 +90,7 @@ export class HomeComponent implements OnInit {
   sidebarColor!: SidebarColorScheme;
 
   constructor() {
-    // TODO - mudar cor do hover nos items, mudar cor no shadowbox do header.
-    this.sidebarColor = new SidebarColorScheme('#942223', '#FFF', '#325899', '#3F3');
+    this.sidebarColor = new SidebarColorScheme('#942223', '#FFF', '#325899', '#3F3', SelectedColor.DARK);
   }
 
   ngOnInit(): void {

@@ -1,5 +1,6 @@
 $background-color-selected: #FFFFFF1F;
-$background-color-hover: #4444447c;
+$background-color-hover-darken: #4444447c;
+$background-color-hover-lighten: #f1f1f146;
 $border-radius: 6px;
 
 ul {
@@ -17,9 +18,17 @@ ul {
     transition: 1s;
     font-size: 16px;
     cursor: pointer;
+}
 
+.select-hover-light {
     &:hover {
-        background-color: $background-color-hover;
+        background-color: $background-color-hover-lighten;
+    }
+}
+
+.select-hover-dark {
+    &:hover {
+        background-color: $background-color-hover-darken;
     }
 }
 
@@ -35,9 +44,9 @@ ul {
     transition: 1s;
     cursor: pointer;
 
-    &:hover {
-        background-color: $background-color-hover;
-    }
+    // &:hover {
+    //     background-color: $background-color-hover;
+    // }
 }
 
 .left-margin {
@@ -48,8 +57,12 @@ ul {
     margin-left: 15px
 }
 
-.selected-item {
-    background-color: $background-color-selected;
+.selected-item-light {
+    background-color: $background-color-hover-lighten;
+}
+
+.selected-item-dark {
+    background-color: $background-color-hover-darken;
 }
 
 .icon-size {

@@ -15,6 +15,7 @@ export class MenuGroupComponent {
 
   constructor() { }
 
+  // TODO - select menu button by route url address.
   expandMenuGroup(menu) {
     menu.open = !menu.open;
   }

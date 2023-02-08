@@ -47,11 +47,18 @@ export class SidebarColorScheme {
     headerColor: string;
     contentBackgroundColor: string;
     contentColor: string;
+    selectedLight: boolean;
 
-    constructor(headerBackgroundColor, headerColor, contentBackgroundColor, contentColor) {
+    constructor(headerBackgroundColor, headerColor, contentBackgroundColor, contentColor, selectedColor: SelectedColor = SelectedColor.LIGHT) {
         this.headerBackgroundColor = headerBackgroundColor;
         this.headerColor = headerColor;
         this.contentBackgroundColor = contentBackgroundColor;
         this.contentColor = contentColor;
+        this.selectedLight = selectedColor === SelectedColor.LIGHT? true : false;
     }
 }
+
+export enum SelectedColor {
+    LIGHT = 'select-hover-light',
+    DARK = 'select-hover-dark'
+};
