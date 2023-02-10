@@ -3,13 +3,11 @@
         <li *ngFor="let menu of menuItems">
             <ng-template *ngIf="menu.type === 'group'; then showGroup else showSection"></ng-template>
             <ng-template #showGroup>
-                <div class="menu-group item-height" (click)="expandMenuGroup(menu)" 
+                <div class="menu-group item-height" (click)="ativeMenuButton(menu)"
                     [ngClass]="{'selected-item-light': $any(menu).selected && colorScheme.selectedLight, 'selected-item-dark': $any(menu).selected && !colorScheme.selectedLight, 'select-hover-light': colorScheme.selectedLight, 'select-hover-dark': !colorScheme.selectedLight}" >
                     <div class="flex-align-items-vertically">
                         <i [class]="$any(menu).icon" class="icon-size"></i>
-                        <span class="left-margin text-overflow" [title]="menu.name">
-                            {{menu.name}}
-                        </span>
+                        <a class="left-margin text-overflow clean-hyperlink" [routerLink]="[$any(menu).route]" routerLinkActive="active" [title]="menu.name">{{menu.name}}</a>
                     </div>
                     <div *ngIf="$any(menu).children.length > 0">
                         <i class="pi pi-chevron-up menu-group-expand" [ngClass]="{'menu-group-colapsed-button': !$any(menu).open}"></i>               
@@ -17,11 +15,9 @@
                 </div>
                 <div *ngIf="$any(menu).children.length > 0" [ngClass]="{'hide-children': !$any(menu).open, 'show-children': $any(menu).open}">
                     <ul>
-                        <li class="sub-menu item-height" *ngFor="let item of $any(menu).children as MenuGroupItem"
+                        <li class="sub-menu item-height" *ngFor="let item of $any(menu).children as MenuGroupItem"  (click)="ativeMenuButton(item)"
                             [ngClass]="{'selected-item-light': $any(item).selected && colorScheme.selectedLight, 'selected-item-dark': $any(item).selected && !colorScheme.selectedLight, 'select-hover-light': colorScheme.selectedLight, 'select-hover-dark': !colorScheme.selectedLight}">
-                            <span class="item-left-margin">
-                                {{item.name}}
-                            </span>
+                            <a class="item-left-margin clean-hyperlink" [routerLink]="[$any(item).route]" routerLinkActive="active">{{item.name}}</a>
                         </li>
                     </ul>
                 </div>

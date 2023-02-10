@@ -45,19 +45,18 @@ export class HomeComponent implements OnInit {
     new MenuSectionModel('Section 1'),
     new MenuGroupModel(
       'Menu 1 com um texto demasiadamente grande para saber se entra uma elipses.',
-      '/menu1',
+      './menu1',
       'pi pi-code',
       [],
       true
     ),
     new MenuGroupModel(
       'Menu 2',
-      '/menu2',
+      './menu2',
       'pi pi-bolt',
       [
-        new MenuItemModel('Submenu1', 'subroute1'),
-        new MenuItemModel('Submenu2', 'subroute2'),
-        new MenuItemModel('Submenu3', 'subroute3')
+        new MenuItemModel('Submenu1', './menu2'),
+        new MenuItemModel('Submenu2', './menu3')
       ]
     ),
     new MenuGroupModel(

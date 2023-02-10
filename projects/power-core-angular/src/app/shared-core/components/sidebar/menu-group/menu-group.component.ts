@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { MenuModel, SidebarColorScheme } from '../model/menu-model';
+import { Component, Input } from '@angular/core';
+import { Router, RouterEvent } from '@angular/router';
+
+import { MenuGroupModel, MenuItemModel, MenuModel, SidebarColorScheme } from '../model/menu-model';
 
 @Component({
   selector: 'app-menu-group',
@@ -13,10 +15,41 @@ export class MenuGroupComponent {
   @Input()
   colorScheme!: SidebarColorScheme;
 
-  constructor() { }
+  currentUrl = '';
+  currentMenuId = -1;
 
-  // TODO - select menu button by route url address.
-  expandMenuGroup(menu) {
-    menu.open = !menu.open;
+  constructor(public router: Router) {
+    router.events.subscribe(event  => {
+      if (event instanceof RouterEvent && this.currentUrl !== event.url) {
+        this.currentUrl = event.url;
+        this.setOffAllMenus();
+      }
+   });
+  }
+
+  ativeMenuButton(menu) {
+    console.log('ativeMenuButton()');
+    
+    if(menu.type === 'group') {
+      menu.open = !menu.open;
+    }
+    this.currentMenuId = menu.id;
+    menu.selected = true;
+  }
+  
+  private setOffAllMenus() {
+    console.log('setOffAllMenus()');
+    this.menuItems.forEach(menu => {
+      if(menu.type === 'group' && menu.id !== this.currentMenuId) {
+        let group = menu as MenuGroupModel;
+        group.selected = false;
+        group.children.forEach(submenu => {
+          submenu.selected = false;
+        });
+      } else if(menu.type === 'item' && menu.id !== this.currentMenuId) {
+        let item = menu as MenuItemModel;
+        item.selected = false;
+      }
+    });
   }
 }

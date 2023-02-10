@@ -1,22 +1,27 @@
 export class MenuModel {
+    static ID: number = 0;
+    id: number;
     name: string;    
     type: string;
+    icon: string;
 
-    constructor(name: string, type: string) {
+    constructor(name: string, type: string, icon: string) {
         this.name = name;
         this.type = type;
+        this.icon = icon;
+        this.id = MenuModel.ID;
+        MenuModel.ID++;
     }
 }
 
 export class MenuGroupModel extends MenuModel {
     children: MenuItemModel [];
     open: boolean;
-    icon: string;
     route: string;
     selected: boolean;
 
     constructor(name: string, route: string, icon: string, children: MenuItemModel[], selected = false) {
-        super(name, 'group');
+        super(name, 'group', icon);
         this.children = children;
         this.route = route;
         this.open = false;
@@ -29,8 +34,8 @@ export class MenuItemModel extends MenuModel {
     route: string;
     selected: boolean;
 
-    constructor(name: string, route: string, selected = false) {
-        super(name, 'item');
+    constructor(name: string, route: string, icon: string = '', selected = false) {
+        super(name, 'item', icon);
         this.route = route;
         this.selected = selected;
     }
@@ -38,7 +43,7 @@ export class MenuItemModel extends MenuModel {
 
 export class MenuSectionModel extends MenuModel {
     constructor(name: string) {
-        super(name, 'section')
+        super(name, 'section', '');
     }
 }
 
